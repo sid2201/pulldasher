@@ -4,12 +4,11 @@ var _ = require('underscore'),
 // Builds an object representation of a row in the DB `commit_statuses`
 // table from the data returned by GitHub's API.
 function DBStatus(status) {
-   var statusData = status.data;
    this.data = {
-      commit: statusData.sha,
-      state: statusData.state,
-      description: statusData.description,
-      log_url: statusData.target_url
+      commit: status.sha,
+      state: status.state,
+      description: status.description,
+      log_url: status.target_url
    };
 }
 
